@@ -1,0 +1,27 @@
+{
+    "name": "OneOm",
+    "description": "Load video stream",
+    "version": "0.1",
+    "permissions": 
+    [
+        "background", 
+        "webRequest", 
+        "webRequestBlocking", 
+        "*://oneom.tk/*",
+        "*://vodlocker.com/*"
+    ],
+    "content_scripts": 
+    [
+        {
+            "matches": ["*://oneom.tk/*", "*://vodlocker.com/*"],
+            "js": ["jquery.js", "index.js"]
+        }
+    ],
+    "background": 
+    {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "manifest_version": 2
+}
+
