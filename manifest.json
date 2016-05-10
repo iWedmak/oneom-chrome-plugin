@@ -17,6 +17,9 @@
             "js": ["jquery.js", "index.js"]
         }
     ],
+    "externally_connectable": {
+        "matches": ["*://oneom.tk/*"]
+    },
     "background": 
     {
         "scripts": ["background.js"],

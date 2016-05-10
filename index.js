@@ -6,16 +6,25 @@ var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
   '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
 
 $( document ).ready(function() {
+    $('.incoming').attr('key', 'plugin').attr('tpl-get', chrome.runtime.id);
+    var script = document.createElement('script');
+    script.textContent = '(' +  function () { 
+        plugin= $('.incoming').attr('tpl-get') ;
+        } + ')();';
+    (document.head||document.documentElement).appendChild(script); //inject in controller what we have plugin on user side
+    /*
     var script = document.createElement('script');
     script.textContent = '(' +  function () { 
         var scope=angular.element($('[ng-controller=OnlineCtrl]')).scope();
         scope.$apply(function() 
         {
-            scope.plugin=true;
+            //scope.plugin=document.write(chrome.runtime.id);
+            //console.log(eval(chrome.runtime.id));
         });
         } + ')();';
     (document.head||document.documentElement).appendChild(script); //inject in controller what we have plugin on user side
-                    
+    //*/
+    /*
     $(".search_online").on("click", function($event)
     {
         var search_url='http://vodlocker.com/?sort_order=down&sort_field=file_id&k={searchString}&per_page=20&data_name=&op=search&page={page}';
@@ -60,7 +69,7 @@ $( document ).ready(function() {
                 }
         );
     });
-    
+    //*/
     $(".search_torrent").on("click", function($event)
     {
         var search_url='http://vodlocker.com/?sort_order=down&sort_field=file_id&k={searchString}&per_page=20&data_name=&op=search&page={page}';
