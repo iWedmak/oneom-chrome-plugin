@@ -10,6 +10,7 @@ $( document ).ready(function() {
     var script = document.createElement('script');
     script.textContent = '(' +  function () { 
         plugin= $('.incoming').attr('tpl-get') ;
+        oneParser.setId(plugin);
         } + ')();';
     (document.head||document.documentElement).appendChild(script); //inject in controller what we have plugin on user side
     /*
@@ -70,6 +71,7 @@ $( document ).ready(function() {
         );
     });
     //*/
+    /*
     $(".search_torrent").on("click", function($event)
     {
         var search_url='http://vodlocker.com/?sort_order=down&sort_field=file_id&k={searchString}&per_page=20&data_name=&op=search&page={page}';
@@ -114,8 +116,9 @@ $( document ).ready(function() {
                 }
         );
     });
+    //*/
 });
-
+/*
 document.addEventListener('DOMSubtreeModified', function() {
     var res=document.querySelectorAll("#online-search-result");
     if(res)
@@ -125,7 +128,7 @@ document.addEventListener('DOMSubtreeModified', function() {
         });
     }
 });
-
+//*/
 function search_result_process() {
     var link_to_parse=$(this).attr('data-url');
     if(pattern.test(link_to_parse))
