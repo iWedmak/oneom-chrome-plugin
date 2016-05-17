@@ -10,7 +10,8 @@ $( document ).ready(function() {
     var script = document.createElement('script');
     script.textContent = '(' +  function () { 
         plugin= $('.incoming').attr('tpl-get') ;
-        oneParser.setId(plugin);
+        oneSubtitle.setId(plugin);
+        oneVideoStream.setId(plugin);
         } + ')();';
     (document.head||document.documentElement).appendChild(script); //inject in controller what we have plugin on user side
     /*
