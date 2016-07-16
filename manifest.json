@@ -1,19 +1,34 @@
 {
     "name": "OneOm",
     "description": "Helps OneOm work",
-    "version": "0.3",
+    "version": "0.3.1",
     "permissions": 
     [
         "background", 
         "webRequest", 
         "webRequestBlocking", 
         "*://oneom.tk/*",
+        "*://www.opensubtitles.org/*",
         "*://vodlocker.com/*"
     ],
     "content_scripts": 
     [
         {
-            "matches": ["*://oneom.tk/*", "*://vodlocker.com/*"],
+            "matches": 
+                [
+                    "*://oneom.tk/*", 
+                    "*://vodlocker.com/*", 
+                    "*://thepiratebay.cr/*", 
+                    "*://rutor.org/*", 
+                    "*://rutracker.org/*", 
+                    "*://bitsnoop.com/*", 
+                    "*://torrentz.eu/*", 
+                    "*://extratorrent.cc/*", 
+                    "*://eztv.ag/*", 
+                    "*://kat.cr/*", 
+                    "*://rarbg.to/*", 
+                    "*://www.opensubtitles.org/*"
+                ],
             "js": ["jquery.js", "index.js"]
         }
     ],

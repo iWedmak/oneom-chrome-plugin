@@ -6,6 +6,8 @@ chrome.runtime.onMessageExternal.addListener(
             var method = request.method ? request.method.toUpperCase() : 'GET';
 
             xhttp.onload = function() {
+                console.log(xhttp.responseText);
+                console.log('some');
                 callback(xhttp.responseText);
             };
             xhttp.onerror = function() {
